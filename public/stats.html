@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stats | Shepherds Elite Circle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav style="width: 100%; padding: 1.5rem 0; text-align: center; border-bottom: 1px solid rgba(107, 127, 117, 0.2); background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50;">
+    <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sage);">Shepherds Elite Circle</span>
+  </nav>
+
+  <header class="section section-narrow" style="text-align: center; padding-top: 4rem;">
+    <div class="pill">Performance</div>
+    <h1 class="section-title" style="margin-top: 1rem;">Traffic & Conversion Snapshot</h1>
+    <p class="section-subtitle" style="margin-bottom: 1rem;">Live stats for the landing and application funnel.</p>
+    <p class="muted">Data pulls directly from the Postgres tables powering this site.</p>
+  </header>
+
+  <main class="page-shell">
+    <section class="stat-grid" id="summary-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="landing-visits">—</div>
+        <div class="stat-label">Landing Visits</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="apply-visits">—</div>
+        <div class="stat-label">Application Page Visits</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="applications">—</div>
+        <div class="stat-label">Applications Saved</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="conversions">—</div>
+        <div class="stat-label">Conversions Logged</div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top: 2rem;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--deep-sage); margin-bottom: 1rem;">Conversion Rates</h3>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="click-through-rate">—%</div>
+          <div class="stat-label">Landing → Apply CTR</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="apply-conversion-rate">—%</div>
+          <div class="stat-label">Apply → Submission</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="overall-conversion-rate">—%</div>
+          <div class="stat-label">Landing → Submission</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top: 2rem;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--deep-sage); margin-bottom: 1rem;">Recent Visits (30 days)</h3>
+      <div class="notice" id="visits-empty" style="display: none;">No visits tracked yet.</div>
+      <table class="table" id="visits-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Page</th>
+            <th>Visits</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card" style="margin-top: 2rem;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--deep-sage); margin-bottom: 1rem;">Applications</h3>
+      <div class="notice" id="applications-empty" style="display: none;">No applications submitted yet.</div>
+      <table class="table" id="applications-table">
+        <thead>
+          <tr>
+            <th>Submitted</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Children</th>
+            <th>Ready To Invest</th>
+            <th>Availability</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo" style="color: var(--gold); margin-bottom: 1rem;">Shepherds Elite Circle</div>
+    <p>© 2024. All rights reserved.</p>
+    <div style="margin-top: 1rem;">
+      <a href="/" style="color: rgba(255,255,255,0.7); text-decoration: underline; letter-spacing: 0.08em;">Back to landing</a>
+    </div>
+  </footer>
+
+  <script src="/js/stats.js"></script>
+</body>
+</html>
