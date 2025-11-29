@@ -1,77 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shepherds Elite Circle - For Graduates of the Shepherd's Roadmap</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shepherds Elite Circle</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    },
+                    colors: {
+                        rose: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            900: '#881337',
+                        },
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            800: '#292524',
+                            900: '#1c1917',
+                        },
+                        sage: {
+                            100: '#eef3ef',
+                            200: '#dbe7dd',
+                            800: '#3f4d42'
+                        },
+                        gold: {
+                            400: '#d4af37',
+                            100: '#f9f5e6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            line-height: 1;
+            color: #d4af37;
+        }
+        .driver-box {
+            background-color: #fef3c7; /* gold-100 equivalent */
+            border-left: 4px solid #d4af37; /* gold-400 equivalent */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body>
-  <!-- Navigation / Top Bar -->
-  <nav style="width: 100%; padding: 1.5rem 0; text-align: center; border-bottom: 1px solid rgba(107, 127, 117, 0.2); background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50;">
-    <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sage);">Shepherds Elite Circle</span>
-  </nav>
-  
-  <div class="urgent-banner">
-    <strong>FOUNDING CIRCLE CLOSES SOON</strong> • Only 5 Intimate Spots • Application Required
-  </div>
-  
-  <section class="hero">
-    <div class="hero-content" style="max-width: 850px;">
-      <p style="font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-taupe); margin-bottom: 2rem; font-weight: 400; opacity: 0; animation: fadeIn 1.5s ease-out 0.3s forwards;">For Graduates of the Shepherd's Roadmap</p>
-      
-      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 400; line-height: 1.2; color: var(--deep-sage); margin-bottom: 1rem; letter-spacing: -0.01em;">
-        You have the map.<br>
-        <span style="display: block; font-style: italic; color: var(--sage); margin-top: 0.5rem; font-size: 3.5rem; font-weight: 300;">Now, let me walk the path with you.</span>
-      </h1>
-      
-      <p style="font-size: 1.3rem; color: var(--warm-gray); line-height: 1.6; margin: 2rem auto 1.5rem; max-width: 600px; font-weight: 400; opacity: 0; animation: fadeIn 1.5s ease-out 0.5s forwards;">
-        First, take a moment. Breathe in. Look at how far you have come.
-      </p>
-      
-      <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--sage); margin-bottom: 3rem; line-height: 1.5; font-weight: 400; max-width: 650px; margin-left: auto; margin-right: auto; opacity: 0; animation: fadeIn 1.5s ease-out 0.7s forwards;">
-        You have done the hard work of learning.<br>Now comes the beautiful work of living it.
-      </p>
-      
-      <a href="/apply" class="cta-primary" style="font-size: 1.15rem; padding: 1.1rem 3rem; border-radius: 50px;">Apply to Join the Founding Circle</a>
-    </div>
-    <div class="scroll-indicator"></div>
-  </section>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-rose-200 selection:text-rose-900">
 
-  <section class="section section-narrow" style="background: var(--cream);">
-    <h2 class="section-title">The Weight Only You Understand</h2>
-    <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--warm-gray);">When you finished the Shepherd's Coaching Roadmap, something shifted. Maybe for the first time, you weren't just reacting to motherhood, but leading through it with purpose.</p>
-    <p style="font-size: 1.2rem; color: var(--warm-gray);">But we both know something true about motherhood: Holding high standards in a world that encourages shortcuts is lonely work.</p>
-    
-    <div class="quote-block" style="background: var(--soft-white); padding: 2rem; border-radius: 4px; margin: 3rem 0; box-shadow: 0 4px 20px rgba(107, 127, 117, 0.08);">
-      It isn't the exhaustion of not knowing what to do. It is the exhaustion of holding the standard high... all by yourself.
-    </div>
-  </section>
+    <!-- Navigation / Top Bar -->
+    <nav class="w-full py-6 text-center border-b border-stone-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <span class="font-serif text-xl tracking-widest uppercase text-stone-600">Shepherds Elite Circle</span>
+    </nav>
 
-  <section class="section section-narrow" style="background: var(--soft-white);">
-    <h2 class="section-title">The Implementation Reality</h2>
-    <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--warm-gray);">You completed Shepherd's Coaching. You learned the complete Heart Coaching framework. The tools work. The approach is sound.</p>
-    <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--deep-sage);"><strong>But then real life hits:</strong></p>
-    <p style="font-size: 1.15rem; line-height: 1.9; margin-bottom: 1rem; color: var(--warm-gray);">Your old patterns—the nagging, the threatening, the reacting in fear—they've been embedded in you for years.</p>
-    <p style="font-size: 1.15rem; line-height: 1.9; margin-bottom: 1rem; color: var(--warm-gray);">Life gets overwhelming. Work piles up. Kids get sick.</p>
-    <p style="font-size: 1.15rem; line-height: 1.9; margin-bottom: 1rem; color: var(--warm-gray);">Your husband questions your approach. Extended family has opinions.</p>
-    <p style="font-size: 1.15rem; line-height: 1.9; margin-bottom: 3rem; color: var(--warm-gray);">And without support, without accountability, without other mothers who understand what you're trying to do... You slip back. Alone.</p>
-    
-    <div style="background: var(--soft-pink); padding: 2.5rem; border-left: 4px solid var(--dusty-rose); border-radius: 4px; margin: 3rem 0;">
-      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--deep-sage); margin-bottom: 1.5rem;">Not because you're weak. Not because Shepherd's didn't work.</p>
-      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--deep-sage); font-weight: 600;">But because changing deeply embedded patterns—especially when you're doing it alone—is one of the hardest things any human being can do.</p>
-    </div>
-    
-    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; text-align: center; color: var(--deep-sage); margin-top: 4rem; font-weight: 500;">You don't have to do it alone anymore.</h3>
-  </section>
+    <!-- Hero Section -->
+    <header class="relative pt-16 pb-24 px-6 overflow-hidden bg-gradient-to-b from-rose-50 to-stone-50">
+        <div class="max-w-2xl mx-auto text-center fade-in-up">
+            
+            <!-- Urgency Bar -->
+            <div class="inline-block bg-rose-200 text-rose-900 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-6 animate-pulse">
+                FOUNDING CIRCLE CLOSES SOON • Only 5 Intimate Spots • Application Required
+            </div>
 
-  <section class="section" style="background: linear-gradient(to bottom, var(--cream) 0%, rgba(143, 168, 158, 0.08) 100%);">
-    <div class="section-narrow">
-      <h2 class="section-title">The Solution</h2>
-      <p class="section-subtitle">Information vs. Integration</p>
+            <p class="text-sm uppercase tracking-[0.2em] text-stone-500 mb-6">For Graduates of the Shepherd's Roadmap</p>
+            
+            <h1 class="font-serif text-5xl md:text-6xl text-stone-900 leading-tight mb-8">
+                You have the map. <br>
+                <span class="italic text-stone-600 block mt-2 text-4xl md:text-5xl">Now, let me walk the path with you.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-stone-600 leading-relaxed mb-6 max-w-lg mx-auto">
+                First, take a moment. Breathe in. Look at how far you have come.
+            </p>
+            
+            <p class="font-serif text-2xl md:text-3xl text-stone-800 italic mb-10 leading-snug">
+                "You have done the hard work of learning. <br> Now comes the beautiful work of living it."
+            </p>
+
+            <a href="#founding-offer" class="inline-block bg-stone-800 text-white px-8 py-4 rounded-full font-serif text-lg hover:bg-stone-700 transition duration-300 shadow-lg shadow-stone-200">
+                Apply to Join the Founding Circle
+            </a>
+        </div>
+        
+        <!-- Decorative subtle background element -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-0">
+             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-rose-300 fill-current">
+                <path d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,70.6,31.7C59,41.9,47.1,49.5,35.4,56.4C23.7,63.3,12.2,69.5,-0.6,70.5C-13.4,71.5,-25.6,67.3,-36.8,60.1C-48,52.9,-58.2,42.7,-66.1,30.8C-74,18.9,-79.6,5.3,-78.3,-7.7C-77,-20.7,-68.8,-33.1,-58.7,-42.6C-48.6,-52.1,-36.6,-58.7,-24.5,-67.2C-12.4,-75.7,-0.2,-86.1,13.1,-88.3C26.4,-90.5,30.5,-63,44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+    </header>
+
+    <!-- The Problem / Agitation -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl text-center mb-10 text-stone-800">The Weight Only You Understand</h2>
+            
+            <div class="space-y-8 text-lg text-stone-600 leading-relaxed">
+                <p>
+                    When you finished the <em>Shepherd's Coaching Roadmap</em>, something shifted. Maybe for the first time, you weren't just reacting to motherhood, but leading through it with purpose.
+                </p>
+                <p>
+                    But we both know something true about motherhood: <strong>Holding high standards in a world that encourages shortcuts is lonely work.</strong>
+                </p>
+                
+                <div class="p-8 bg-stone-50 border-l-4 border-stone-300 my-10">
+                    <p class="italic mb-0 font-serif text-xl">"It isn't the exhaustion of not knowing what to do. It is the exhaustion of holding the standard high... all by yourself."</p>
+                </div>
+                
+                <h3 class="font-serif text-2xl text-stone-800 mt-8 text-center md:text-left">The Implementation Reality</h3>
+                
+                <p>
+                    You completed Shepherd's Coaching. You learned the complete Heart Coaching framework. The tools work. The approach is sound.
+                </p>
+                <p class="text-stone-800 font-bold">
+                    But then real life hits:
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-stone-600">
+                    <li>Your old patterns—the nagging, the threatening, the reacting in fear—they've been embedded in you for years.</li>
+                    <li>Life gets overwhelming. Work piles up. Kids get sick.</li>
+                    <li>Your husband questions your approach. Extended family has opinions.</li>
+                </ul>
+
+                <!-- The Core Problem Insight -->
+                <div class="bg-rose-50 p-6 rounded-lg border-l-4 border-rose-300">
+                    <p class="font-medium text-stone-800">
+                        And without support, without accountability, without other mothers who understand what you're trying to do...
+                        You slip back. Alone.
+                    </p>
+                    <p class="italic mt-4 text-stone-600">
+                        Not because you're weak. Not because Shepherd's didn't work. But because changing deeply embedded patterns—especially when you're doing it alone—is one of the hardest things any human being can do.
+                    </p>
+                </div>
+                
+                <p class="font-serif text-xl text-stone-800 italic pt-4">
+                    You don't have to do it alone anymore.
+                </p>
+
+            </div>
+        </div>
+      </section>
+
+    <!-- The Pivot / Solution -->
+    <section class="py-20 px-6 bg-sage-100">
+        <div class="max-w-3xl mx-auto text-center">
+            <h3 class="text-sm font-bold tracking-widest uppercase text-sage-800 mb-4">The Solution</h3>
+            <h2 class="font-serif text-4xl md:text-5xl mb-8 text-stone-900">Information vs. Integration</h2>
+            <p class="text-xl text-stone-700 mb-12">
+                You don't need more information. You are already competent. <br>
+                What you are craving is <strong>Integration. Consistency. Suhba (Companionship).</strong>
+            </p>
+            
+            <div class="bg-white p-10 shadow-xl rounded-2xl">
+                <p class="font-serif text-2xl italic text-stone-800 mb-6">"The believer to the believer is like a building—each part strengthens the other."</p>
+                <p class="text-stone-500 font-bold uppercase text-xs tracking-wide">— Prophet Muhammad ﷺ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Mentorship (Intimacy Focus) -->
+    <section class="py-24 px-6 bg-white relative">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-serif text-4xl text-center mb-6">The Real Key: Intimate Partnership</h2>
+            <p class="text-center text-stone-600 text-lg mb-12 max-w-xl mx-auto">
+                This is the part that changes everything. For the next <strong>3 months</strong>, you are not just "taking a course." You are entering a partnership.
+            </p>
+            
+            <!-- Driving Metaphor -->
+            <div class="driver-box p-6 rounded-lg mb-10 text-stone-800">
+                <h4 class="font-serif text-2xl mb-3 text-stone-900">Think of it this way...</h4>
+                <p class="font-bold mb-2">The Roadmap gave you the <span class="text-rose-900">MAP</span>. You got your license. You know how to drive.</p>
+                <p class="font-bold">The Circle gives you a <span class="text-rose-900">DRIVING INSTRUCTOR</span> in the passenger seat for 3 months while you navigate real traffic.</p>
+            </div>
+
+            <div class="space-y-6 text-lg text-stone-600">
+                <p>
+                    This isn't just about a peer group. The real key to this offer is the <strong>intimacy of our work together.</strong>
+                </p>
+
+                <!-- Imagine This Block -->
+                <div class="bg-rose-50 p-6 rounded-lg border-l-4 border-rose-300">
+                    <h4 class="font-serif text-2xl text-stone-800 mb-3">Imagine This: Three Months From Now...</h4>
+                    <p class="text-stone-800 italic">
+                        No matter what your kids do, no matter what life throws at you, you aren't facing it alone. You have me and your circle—supporting you, understanding you, helping you grow.
+                    </p>
+                    <p class="text-stone-800 italic mt-3">
+                        Instead of sinking into regret when things get hard, you have exactly the support you need. You're not driven by fear anymore. You're surrounded by women who lift you up.
+                    </p>
+                </div>
+
+                <p>
+                    We will troubleshoot YOUR specific child, YOUR unique challenges, and YOUR actual life. Instead of sinking into guilt when things get hard, I will be there to remind you of the map, to hold the bar high when your arms are tired, and to remind you that your gentleness is an act of worship.
+                </p>
+                <p class="font-serif text-xl italic text-stone-800 pt-4">
+                    I am not just teaching you anymore; I am walking with you.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Limited Availability / Urgency Section -->
+    <section class="py-16 px-6 bg-stone-800 text-stone-100">
+        <div class="max-w-2xl mx-auto text-center">
+            <span class="inline-block bg-rose-200 text-rose-900 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">Application Required</span>
+            <h2 class="font-serif text-4xl mb-4 text-white">The Clock Is Ticking</h2>
+            
+            <p class="text-lg text-stone-300 leading-relaxed mb-6">
+                With only <span class="font-bold text-white">5 spots</span> in this founding circle, this level of intimate mentorship simply cannot be replicated in a larger group.
+            </p>
+            <p class="text-lg text-stone-300 leading-relaxed">
+                This is an application-based program. We carefully select mothers who are truly ready to commit to the work.
+            </p>
+        </div>
+    </section>
+
+    <!-- The Circle (Perfume Shop) -->
+    <section class="py-20 px-6 bg-gradient-to-br from-stone-50 to-rose-50">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-serif text-3xl md:text-4xl mb-8">Your Personal Shura Council</h2>
+            <div class="relative bg-white/60 backdrop-blur-sm p-8 rounded-xl border border-rose-100">
+                <span class="quote-mark absolute top-4 left-4 opacity-20">"</span>
+                <p class="text-lg md:text-xl leading-relaxed text-stone-700 italic">
+                    Our Prophet (peace be upon him) gave us the beautiful example of the perfume seller. Even if you don't buy the perfume, just sitting in the shop makes you smell pleasant. <br><br>
+                    <strong>This Circle is that perfume shop.</strong>
+                </p>
+            </div>
+            <p class="mt-8 text-stone-600 leading-relaxed">
+                When you surround yourself with five other mothers who are actively practicing patience, making dua, and striving for Ihsan, you naturally rise to that standard. This is a place of <em>Nasiha</em>—sincere advice from hearts that care about your Akhirah as much as your Dunya.
+            </p>
+        </div>
+    </section>
+
+    <!-- The Difference Between Doing It Alone vs. Together -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-16 text-stone-900">The Difference</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                <!-- WITHOUT Column -->
+                <div class="bg-stone-100 rounded-3xl p-8 md:p-10">
+                    <h3 class="font-serif text-2xl text-stone-500 mb-8 border-b border-stone-200 pb-4">Mothers Doing It Alone</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start opacity-70">
+                            <i class="fa-solid fa-xmark text-stone-400 mt-1 mr-4"></i>
+                            <p class="text-stone-600">Sinking back into old patterns</p>
+                        </li>
+                        <li class="flex items-start opacity-70">
+                            <i class="fa-solid fa-xmark text-stone-400 mt-1 mr-4"></i>
+                            <p class="text-stone-600">Feeling guilty and ashamed when they fail</p>
+                        </li>
+                        <li class="flex items-start opacity-70">
+                            <i class="fa-solid fa-xmark text-stone-400 mt-1 mr-4"></i>
+                            <p class="text-stone-600">No one to turn to when it gets hard</p>
+                        </li>
+                        <li class="flex items-start opacity-70">
+                            <i class="fa-solid fa-xmark text-stone-400 mt-1 mr-4"></i>
+                            <p class="text-stone-600">Driven by fear and doubt</p>
+                        </li>
+                        <li class="flex items-start opacity-70">
+                            <i class="fa-solid fa-xmark text-stone-400 mt-1 mr-4"></i>
+                            <p class="text-stone-600">Eventually give up in discouragement</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- WITH Column -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 border-2 border-rose-100 shadow-xl shadow-rose-100/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-rose-200 text-rose-900 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-bl-lg">The New Way</div>
+                    
+                    <h3 class="font-serif text-2xl text-rose-900 mb-8 border-b border-rose-100 pb-4">Mothers In The Circle</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-check text-rose-600 text-xs"></i>
+                            </div>
+                            <p class="text-stone-800 font-medium">Growing consistently every week</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-check text-rose-600 text-xs"></i>
+                            </div>
+                            <p class="text-stone-800 font-medium">Feeling strong and confident</p>
+                        </li>
+                        <li class="flex-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-check text-rose-600 text-xs"></i>
+                            </div>
+                            <p class="text-stone-800 font-medium">Support right there when they need it</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-check text-rose-600 text-xs"></i>
+                            </div>
+                            <p class="text-stone-800 font-medium">Driven by growth, not fear</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-check text-rose-600 text-xs"></i>
+                            </div>
+                            <p class="text-stone-800 font-medium">Keep moving forward together</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Deliverables -->
+    <section class="py-24 px-6 bg-stone-50" id="details">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-stone-900 mb-4">Shepherds Elite Circle</h2>
+                <p class="text-stone-500 uppercase tracking-widest">An Intimate 3-Month Container</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1: Workshops -->
+                <div class="bg-white p-8 rounded-2xl border border-stone-100 hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <span class="font-serif text-4xl font-bold text-rose-900 mr-4">8</span>
+                        <h3 class="font-serif text-2xl">Live Deep-Dive Workshops</h3>
+                    </div>
+                    <p class="text-stone-600 mb-6">8 workshops to go deeper into the Heart Coaching framework with opportunity to discuss how to apply it in our mini group—sharing real experiences and learning from each other.</p>
+                    <h4 class="text-sm font-bold text-rose-900 uppercase tracking-wider mb-3">What this means for you:</h4>
+                    <ul class="list-none space-y-2 text-stone-700 text-sm">
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Deep exploration of Heart Coaching principles beyond the basics</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Safe space to share challenges and celebrate wins with mothers who understand</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Learn from real-life applications as other mothers share their experiences</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Ongoing refinement of your approach based on what's actually happening in your home</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Role Plays -->
+                <div class="bg-white p-8 rounded-2xl border border-stone-100 hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <i class="fa-solid fa-bolt-lightning text-3xl text-rose-900 mr-4"></i>
+                        <h3 class="font-serif text-2xl">Role Plays & Practice Labs</h3>
+                    </div>
+                    <p class="text-stone-600 mb-6">Every workshop includes hands-on practice. Real scenarios. You'll practice with other committed mothers until Heart Coaching feels natural.</p>
+                    <h4 class="text-sm font-bold text-rose-900 uppercase tracking-wider mb-3">What this means for you:</h4>
+                    <ul class="list-none space-y-2 text-stone-700 text-sm">
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Practice the hard conversations in a safe space before they happen at home</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Get immediate feedback on what's working and what needs adjustment</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Build muscle memory for gentle responses, so they come naturally under stress</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Watch other mothers navigate similar challenges—learning from their wins and struggles</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: 1:1 Coaching -->
+                <div class="bg-white p-8 rounded-2xl border border-stone-100 hover:shadow-lg transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-rose-200 text-rose-900 text-xs font-bold px-3 py-1 rounded-bl-lg">HIGH VALUE</div>
+                    <div class="flex items-center mb-6">
+                        <span class="font-serif text-4xl font-bold text-rose-900 mr-4">3</span>
+                        <h3 class="font-serif text-2xl">Private 1:1 Coaching Sessions</h3>
+                    </div>
+                    <p class="text-stone-600 mb-6">Just you and me. We create personalized strategies for YOUR family dynamics. This is where the deepest shifts happen.</p>
+                    <h4 class="text-sm font-bold text-rose-900 uppercase tracking-wider mb-3">What this means for you:</h4>
+                    <ul class="list-none space-y-2 text-stone-700 text-sm">
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Your strong-willed daughter? We'll create a specific plan for her temperament</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> That one recurring battle? We'll troubleshoot it until you have a breakthrough</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Complete confidentiality—share what you can't share anywhere else</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> My undivided attention on the challenges keeping you up at night</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Custom Plan -->
+                <div class="bg-white p-8 rounded-2xl border border-stone-100 hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <i class="fa-solid fa-clipboard-list text-3xl text-rose-900 mr-4"></i>
+                        <h3 class="font-serif text-2xl">Custom Implementation Plan</h3>
+                    </div>
+                    <p class="text-stone-600 mb-6">No generic advice. I'll create a custom roadmap specifically for YOUR child—their age, personality, and challenges.</p>
+                    <h4 class="text-sm font-bold text-rose-900 uppercase tracking-wider mb-3">What this means for you:</h4>
+                    <ul class="list-none space-y-2 text-stone-700 text-sm">
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> A step-by-step playbook tailored to your child or your teen's defiance</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> Clear action steps for the next 30, 60, and 90 days—no more guessing</li>
+                        <li class="flex items-start"><i class="fa-solid fa-chevron-right text-rose-300 mt-1 mr-2 text-xs"></i> A reference document you can return to whenever you feel lost or overwhelmed</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-sage-200/50 p-6 rounded-2xl text-center border border-sage-200">
+                <p class="font-serif text-2xl text-sage-800"><i class="fa-solid fa-gem mr-2 text-sm align-middle"></i> Intimate Circle of 5 Mothers</p>
+                <p class="text-stone-600 mt-2">Maximum 5 spots. Everyone gets personal attention. This isn't a massive group where you hide in the back.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / CTA Section -->
+    <section class="py-24 px-6 bg-stone-900 text-stone-100" id="founding-offer">
+        <div class="max-w-lg mx-auto text-center">
+            <h2 class="font-serif text-4xl mb-4 text-white">The Founding Member Invitation</h2>
+            <p class="text-stone-400 mb-10">Help me shape the future of this program.</p>
+            
+            <!-- Value Breakdown Table -->
+            <div class="bg-stone-800 p-6 rounded-xl mb-8 border border-stone-700">
+                <h3 class="font-serif text-2xl text-white mb-4">Program Value Breakdown</h3>
+                <div class="text-sm text-stone-300 space-y-2 mb-4">
+                    <div class="flex justify-between border-b border-stone-700 pb-1"><span>8 Live Workshops</span><span>$2,000</span></div>
+                    <div class="flex justify-between border-b border-stone-700 pb-1"><span>3 Private 1:1 Sessions</span><span>$960</span></div>
+                    <div class="flex justify-between"><span>Custom Implementation Plan</span><span>$500</span></div>
+                </div>
+                <div class="flex justify-between font-bold text-lg text-rose-300 pt-2 border-t border-stone-600">
+                    <span>TOTAL VALUE</span><span>$3,460</span>
+                </div>
+            </div>
+
+            <div class="bg-white text-stone-900 rounded-3xl p-1 relative overflow-hidden shadow-2xl shadow-rose-900/20">
+                <div class="absolute inset-0 bg-gradient-to-r from-rose-200 via-gold-400 to-rose-200 opacity-50"></div>
+                
+                <div class="bg-white rounded-[20px] p-8 md:p-12 relative z-10">
+                    <p class="uppercase tracking-widest text-xs font-bold text-stone-400 mb-4">Founding Circle Investment</p>
+                    <div class="flex items-center justify-center gap-4 mb-2">
+                        <span class="text-stone-400 line-through text-xl">$3,460</span>
+                        <span class="font-serif text-6xl text-stone-900">$997</span>
+                    </div>
+                    <p class="text-xs text-stone-500 mb-8">Or $360/month for 3 installments</p>
+                    
+                    <ul class="text-left space-y-4 mb-8 text-stone-700">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-rose-300 mt-1 mr-3"></i> <span>3 Months of Intimate Mentorship</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-rose-300 mt-1 mr-3"></i> <span>3 Private 1:1 Sessions</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-rose-300 mt-1 mr-3"></i> <span>Custom Implementation Plan</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-rose-300 mt-1 mr-3"></i> <span>Weekly Practice Labs</span></li>
+                    </ul>
+
+                    <a href="/apply" class="block w-full bg-stone-900 text-white py-4 rounded-xl font-serif text-xl hover:bg-rose-900 transition-colors duration-300 shadow-lg text-center">
+                        Apply Now
+                    </a>
+                    
+                    <p class="mt-4 text-red-700 text-xs font-bold tracking-wider animate-pulse">
+                        <i class="fa-solid fa-circle-exclamation mr-1"></i> STRICTLY 5 SPOTS • APPLICATION REQUIRED
+                    </p>
+                </div>
+            </div>
+            
+            <p class="mt-8 text-red-500 text-sm font-bold tracking-wider">
+                Application-based acceptance. When these 5 spots fill, this offer closes. The next cohort won't open for months—and pricing will increase.
+            </p>
+            <h3 class="font-serif text-2xl text-white mt-8 mb-4">This Isn't A Decision You Can Sleep On</h3>
+            <p class="text-stone-400 text-sm leading-relaxed max-w-sm mx-auto mb-4">
+                This is the founding cohort. Once these 5 spots are filled, we close enrollment to focus entirely on this intimate circle.
+            </p>
+            <p class="text-stone-300 text-sm font-bold leading-relaxed max-w-sm mx-auto mb-4">
+                Not everyone will be accepted.
+            </p>
+            <p class="text-stone-400 text-sm leading-relaxed max-w-sm mx-auto">
+                We carefully review each application to ensure the right fit. If you wait, you'll be joining a waitlist—and by then, the founding member pricing and this level of 1:1 attention will be gone.
+            </p>
+            
+            <div class="mt-8">
+                <a href="/apply" class="inline-block bg-rose-900 text-white px-8 py-3 rounded-full font-serif text-lg hover:bg-rose-800 transition duration-300 shadow-lg">
+                    Apply for Your Spot
+                </a>
+                <p class="text-stone-500 text-xs mt-2 uppercase tracking-widest">Spots remaining will be updated in real-time</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final Closing Argument -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-2xl mx-auto text-center">
+            <p class="font-serif text-2xl text-stone-900 leading-snug mb-2">The question isn't whether you need support.</p>
+            <p class="font-serif text-2xl text-stone-900 font-bold leading-snug mb-12">The question is: How much longer will you try to carry this alone?</p>
+            
+            <h2 class="font-serif text-3xl mb-8 text-stone-900">One More Thing Before You Decide...</h2>
+            
+            <p class="text-xl text-stone-600 mb-8 leading-relaxed">
+                If you're reading this and feeling that pull—that <span class="font-bold text-rose-900">YES</span> in your chest—that's your intuition telling you something.
+            </p>
+            
+            <p class="font-serif text-2xl italic text-stone-800 mb-10">
+                Your soul knows what your mind might be resisting: <span class="font-bold">You need this.</span>
+            </p>
+
+            <p class="text-lg text-stone-600 mb-4">
+                Not because you're broken. Not because you're failing.
+            </p>
+            <p class="text-lg text-stone-600 mb-4">
+                But because you're finally ready to stop carrying this alone.
+            </p>
+            <p class="text-lg text-stone-600 mb-4">
+                You're finally ready to surround yourself with women who will hold you accountable, celebrate your growth, and refuse to let you slip back into old patterns.
+            </p>
+            <p class="text-lg text-stone-600 mb-12">
+                You're finally ready to invest in yourself the way you invest in everyone else.
+            </p>
+            
+            <h3 class="font-serif text-2xl text-stone-900 mb-6">So here's my invitation:</h3>
+            <p class="text-lg text-stone-800 font-medium italic mb-12 bg-rose-50 p-6 rounded-xl border border-rose-200">
+                Close this page and sit with it. Ask yourself:<br><br>
+                "If I don't join this Circle, where will I be in 3 months? Will anything have changed? Or will I still be exhausted, still be alone, still be wondering if there's a better way?"
+            </p>
+
+            <p class="font-serif text-xl italic text-stone-800 mb-8">
+                If the answer makes your heart sink, you know what to do. The Circle is waiting for you.
+            </p>
+            
+            <a href="/apply" class="inline-block bg-rose-900 text-white px-10 py-5 rounded-full font-serif text-xl hover:bg-rose-800 transition duration-300 shadow-xl shadow-rose-300/50">
+                Apply to Join the Founding Circle
+            </a>
+            
+            <div class="mt-16 text-center max-w-lg mx-auto">
+                <p class="font-serif text-lg italic text-stone-700 mb-4">
+                    The Sahaba did not learn the Deen in isolation; they learned it in the company of the Prophet ﷺ and in the circle of one another.
+                </p>
+                <p class="text-stone-500 text-sm">
+                    You are a wonderful mother, and Allah (SWT) sees your efforts. This is simply for those who say: 'I want to go deeper.'
+                </p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-50 py-12 text-center text-stone-400 text-sm border-t border-stone-200">
+        <p class="font-serif text-lg text-stone-600 mb-4">Shepherds Elite Circle</p>
+        <p>&copy; 2024. All rights reserved.</p>
+        <p class="mt-2">In the service of families.</p>
+    </footer>
+
+</body>
+</html>
       
       <p style="font-size: 1.25rem; text-align: center; margin-bottom: 3rem;">You don't need more information. You are already competent.<br>What you are craving is <strong>Integration. Consistency. Suhba (Companionship).</strong></p>
       
